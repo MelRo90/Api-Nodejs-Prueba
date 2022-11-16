@@ -4,7 +4,7 @@ const router = express.Router();
 
 //create user
 router.post('/users', (req,res) => {
-    const user = userSchema(req.query);
+    const user = userSchema(req.body);
     user
         .save()
         .then((data) => res.json(data))
@@ -31,9 +31,9 @@ router.get('/users/:id', (req,res) => {
 //update user
 router.put('/users/:id', (req,res) => {
     const { id } = req.params;
-    const {name, age, email} = req.body;
+    const {name, age, email, phone} = req.body;
     userSchema
-        .updateOne({_id: id },{ $set: {name, age, email} })
+        .updateOne({_id: id },{ $set: {name, age, email, phone} })
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }))
 });

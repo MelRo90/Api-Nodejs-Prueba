@@ -4,9 +4,11 @@ POST http://localhost:9000/api/users HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Robert Lewandowski",
+    "name": "RoberT",
     "age": "25",
-    "email": "LewanPolski01@gmail.com"
+    "email": "Lewan@gmail.com",
+    "phone": ""
+    
 }
 
 
